@@ -108,7 +108,7 @@ OtaOsStatus_t OtaReceiveEvent_FreeRTOS( void * pEventMsg )
     /* Temp buffer.*/
     uint8_t buff[ sizeof( OtaEventMsg_t ) ];
 
-    retVal = xQueueReceive( otaEventQueue, &buff, portMAX_DELAY );
+    retVal = xQueueReceive( otaEventQueue, &buff, 10000 );
 
     if( retVal == pdTRUE )
     {
